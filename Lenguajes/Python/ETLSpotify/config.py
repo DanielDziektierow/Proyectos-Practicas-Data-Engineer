@@ -1,2 +1,3 @@
-client_id= 'f31777d100f34b97b857094654c8d506'
-client_secret= 'b712d81b37594f0897c337be1a2d57e1'
+client_id= 'a'
+client_secret= 'a'
+#Completar en ambas los datos propios.
