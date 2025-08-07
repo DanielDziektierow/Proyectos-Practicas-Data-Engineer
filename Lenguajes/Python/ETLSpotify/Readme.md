@@ -14,10 +14,6 @@ Este proyecto consiste en un pipeline ETL (Extracción, Transformación y Carga)
 
 ---
 
-![alt text](image.png)
-
----
-
 ## ⚙️ ¿Cómo se desarrolló el proyecto?
 
 ### 1. Conexión con la API de Spotify
@@ -46,16 +42,8 @@ Este proyecto consiste en un pipeline ETL (Extracción, Transformación y Carga)
   - 🎧 Géneros disponibles
   - 📅 Filtros por año
 
-![Dashboard de Power BI](./df46d25b-8109-463b-96c5-6b798c00ccf4.png)
 
----
-
-## 📂 Archivos incluidos
-
-- `etl_spotify.py` → Script Python para la conexión con la API y generación del CSV.
-- `canciones_generos.csv` → Dataset generado con los datos extraídos.
-- `df46d25b-8109-463b-96c5-6b798c00ccf4.png` → Imagen del dashboard realizado en Power BI.
-- `README.md` → Este archivo.
+![alt text](image.png)
 
 ---
 
