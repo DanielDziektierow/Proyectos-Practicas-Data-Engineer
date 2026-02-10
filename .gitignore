@@ -1,0 +1,47 @@
+# ---------------------------
+# Archivos de Python
+# ---------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.swp
+
+# ---------------------------
+# Entornos virtuales
+# ---------------------------
+venv/
+env/
+*.egg-info/
+
+# ---------------------------
+# Archivos de datos grandes / procesados
+# ---------------------------
+data/raw/
+data/processed/
+data/sql_outputs/
+*.db
+*.csv
+*.zip
+
+
+# ---------------------------
+# Archivos de sistema
+# ---------------------------
+.DS_Store
+Thumbs.db
+
+# ---------------------------
+# Logs y temporales
+# ---------------------------
+*.log
+*.tmp
+*.bak
+
+# ---------------------------
+# IDEs
+# ---------------------------
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
