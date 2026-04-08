@@ -22,13 +22,13 @@ jobs:
           python-version: 3.11
 
       - name: Instalar dependencias
-        run: pip install -r requirements.txt
+        run: pip install -r Lenguajes\Python\ETLCityBikes\requirements.txt
 
       - name: Ejecutar ETL
         env:
           API_URL: ${{ secrets.API_URL }}
           OUTPUT_PATH: ${{ secrets.OUTPUT_PATH }}
-        run: python ETL.py
+        run: python Lenguajes/Python/ETLCityBikes/ETL.py
 
       - name: Guardar CSV como artifact
         uses: actions/upload-artifact@v4
