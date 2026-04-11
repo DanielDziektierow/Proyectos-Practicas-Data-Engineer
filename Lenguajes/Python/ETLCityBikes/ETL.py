@@ -9,7 +9,7 @@ load_dotenv()
 logging.basicConfig(level=logging.INFO)
 
 URL = os.getenv("API_URL")
-OUTPUT_PATH = os.getenv("OUTPUT_PATH", "output/data.csv")
+OUTPUT_PATH = os.getenv("OUTPUT_PATH", "ETLCityBikes/ETL_bikes.csv")
 
 def get_data(url):
     response = requests.get(url, timeout=15)
