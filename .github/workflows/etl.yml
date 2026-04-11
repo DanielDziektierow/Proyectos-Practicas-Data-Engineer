@@ -6,11 +6,14 @@ on:
       - main
   workflow_dispatch:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 * * * *"  # Ejecutar cada hora
 
 jobs:
   run-etl:
     runs-on: ubuntu-latest
+
+    env:
+      OUTPUT_PATH: ETLCityBikes/ETL_bikes.csv
 
     steps:
       - name: Clonar repo
@@ -27,8 +30,22 @@ jobs:
       - name: Ejecutar ETL
         env:
           API_URL: ${{ secrets.API_URL }}
-          OUTPUT_PATH: ${{ secrets.OUTPUT_PATH }}
         run: python Lenguajes/Python/ETLCityBikes/ETL.py
+
+      - name: Verificar si el archivo existe, y crear uno vacío si no
+        run: |
+          if [ ! -f ${{ env.OUTPUT_PATH }} ]; then
+            echo "Archivo no encontrado. Creando un archivo vacío..."
+            mkdir -p $(dirname ${{ env.OUTPUT_PATH }})  # Crear la carpeta si no existe
+            touch ${{ env.OUTPUT_PATH }}  # Crear un archivo vacío
+          else
+            echo "El archivo ya existe."
+          fi
+
+      - name: Verificar archivos generados
+        run: |
+          echo "OUTPUT_PATH=$OUTPUT_PATH"
+          ls -R  # Verificar si el archivo existe en la ruta esperada
 
       - name: Guardar CSV como artifact
         uses: actions/upload-artifact@v4
